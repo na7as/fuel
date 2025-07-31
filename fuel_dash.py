@@ -57,8 +57,8 @@ def load_and_process_data():
     """Load and preprocess the data with comprehensive error handling"""
     try:
         # Load the raw data
-        fuel_df = pd.read_excel("fuel/fuel_dashboard2.xlsx")
-        prod_df = pd.read_excel("fuel/Prd Jun 2025.xlsx")
+        fuel_df = pd.read_excel("fuel_dashboard2.xlsx")
+        prod_df = pd.read_excel("Prd Jun 2025.xlsx")
         
         # Fuel data preprocessing
         fuel_df['Equipment No.'] = fuel_df['Equipment No.'].fillna(fuel_df['Order'])
@@ -648,7 +648,7 @@ def main():
             'Production_Quantity': '{:.2f}',
             'Customer_Production_Percentage': '{:.2f}%',
             'Fuel_Quantity_Allocated': '{:.2f}',
-            'Fuel_Amount_Allocated': '${:.2f}',
+            'Fuel_Amount_Allocated': 'E£{:.2f}',
             'Fuel_per_m3': '{:.4f}'
         }).highlight_max(subset=['Fuel_per_m3'], color='lightcoral'),
         use_container_width=True,
